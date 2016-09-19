@@ -14,7 +14,7 @@ angular.module('flapperNews')
   };
 
   o.create = function(post) {
-    return $htpp.post('/posts.json', post).success(function(data){
+    return $http.post('/posts.json', post).success(function(data){
       o.posts.push(data);
     })
   };
