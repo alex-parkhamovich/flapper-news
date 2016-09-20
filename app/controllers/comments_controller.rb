@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create 
-    post = Post.find(params[:id])
+    post = Post.find(params[:post_id])
     comment = post.comments.create(comment_params)
     respond_with post, comment
   end
@@ -16,6 +16,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.rquire(:coment).permit(:body)
+    params.require(:comment).permit(:body)
   end
 end
