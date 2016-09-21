@@ -10,7 +10,7 @@
     <span style="font-size:20px; margin-left:10px;">
       <a ng-show="post.link" href="{{post.link}}">
         {{post.title}}
-      </a>
+      </a><p>posted by</p><a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a>
       <span ng-hide="post.link">
         {{post.title}}
       </span>
