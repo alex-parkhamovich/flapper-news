@@ -21,6 +21,11 @@ gem 'sprockets', '~> 3.0'
 gem 'angular-rails-templates'
 gem 'responders'
 gem 'angular_rails_csrf', github: 'alex-parkhamovich/angular_rails_csrf'
+gem 'devise'
+
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
