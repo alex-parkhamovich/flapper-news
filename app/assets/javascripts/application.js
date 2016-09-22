@@ -3,3 +3,4 @@
 //= require angular-ui-router
 //= require_tree .
 //= require angular-devise
+//= require angular-video-bg 
