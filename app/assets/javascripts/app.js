@@ -6,6 +6,16 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
   function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
+      .state('app', {
+        url: '',
+        template: "<div ui-view></div>",
+        abstract: true,
+        resolve: {
+          user: (Auth) => {
+            return Auth.currentUser()
+          }
+        }
+      })
       .state('home', {
         url: '/home',
         templateUrl: 'home/_home.html',
@@ -16,7 +26,7 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
           }]
         }
       })
-      .state('posts', {
+      .state('app.posts', {
         url: '/posts/{id}',
         templateUrl: 'posts/_posts.html',
         controller: 'PostsCtrl',
@@ -31,9 +41,9 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
         templateUrl: 'auth/_login.html',
         controller: 'AuthCtrl',
         onEnter: ['$state', 'Auth', function($state, Auth) {
-          Auth.currentUser().then(function () {
+          if (Auth.isAuthenticated()) {
             $state.go('home');
-          })
+          }
         }]
       })
       .state('register', {
