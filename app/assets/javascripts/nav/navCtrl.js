@@ -13,7 +13,6 @@ function($scope, Auth) {
     $scope.user = user;
   })
   .catch(function() {
-
   });
 
   $scope.$on('devise:new-registration', function (e, user){

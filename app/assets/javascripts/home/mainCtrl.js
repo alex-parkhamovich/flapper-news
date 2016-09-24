@@ -8,10 +8,10 @@ angular.module('flapperNews')
       if(!$scope.title || $scope.title === '') { return; }
       posts.create({
         title: $scope.title,
-        link: $scope.link,
+        body: $scope.body,
       });
       $scope.title = '';
-      $scope.link = '';
+      $scope.body = '';
     };
     $scope.incrementUpvotes = function(post) {
       posts.upvote(post);
