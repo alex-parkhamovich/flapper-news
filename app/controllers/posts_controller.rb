@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
 
-    respond_with post
+    respond_with post.all
   end
 
   def upvote
