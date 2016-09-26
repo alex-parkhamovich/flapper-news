@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, only: [:create, :upvote]
+  before_filter :authenticate_user!, only: [:create, :upvote, :destroy]
 
   def index
     respond_with Post.all
@@ -14,16 +14,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
-
-    respond_with post.all
+    respond_with Post.destroy(params[:id])
   end
 
   def upvote
     post = Post.find(params[:id])
     post.increment!(:upvotes)
-
+  
     respond_with post
   end
 

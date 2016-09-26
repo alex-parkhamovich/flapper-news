@@ -32,9 +32,15 @@ angular.module('flapperNews')
     });
   };
 
-  o.destroy = function(post) {
-    return $http.delete('/posts/' + post.id + '/destroy.json');
-  }
+  o.delete = function(id) {
+    return $http.delete('/posts/' + id + '.json').success(function(data) {
+      for (var i = o.posts.length -1; i>=0; i--) {
+        if(o.posts[i].id === id) {
+         o.posts.splice(i, 1);
+        }
+      }
+    })
+  };
 
   o.addComment = function(id, comment) {
     return $http.post('/posts/' + id + '/comments.json', comment);

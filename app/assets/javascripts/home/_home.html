@@ -5,6 +5,8 @@
 
     <span style="font-size:20px; margin-left:10px;">
       <a href="#/posts/{{post.id}}">{{post.title}}</a>
+      <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removePost(post.id)" class="close">        
+      </span>
       <span style="font-size:15px">
         <br>
         posted by <a ng-href="#/users/{{post.user.username}}">{{post.user.username}}</a>
