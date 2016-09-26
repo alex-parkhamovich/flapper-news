@@ -4,16 +4,17 @@ angular.module('flapperNews')
 '$scope',
 '$state',
 'Auth',
+'UserSession',
 
-function($scope, $state, Auth){
+function($scope, $state, Auth, UserSession){
   $scope.login = function() {
-    Auth.login($scope.user).then(function(){
+    UserSession.login($scope.user).then(function(){
       $state.go('home');
     });
   };
 
   $scope.register = function() {
-    Auth.register($scope.user).then(function(){
+    UserSession.register($scope.user).then(function(){
       $state.go('home');
     });
   };

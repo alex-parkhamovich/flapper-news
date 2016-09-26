@@ -3,7 +3,8 @@ angular.module('flapperNews')
 .controller('MainCtrl', [
   '$scope',
   'posts',
-  function($scope, posts){
+  'UserSession',
+  function($scope, posts, UserSession){
     $scope.addPost = function(){
       if(!$scope.title || $scope.title === '') { return; }
       posts.create({
@@ -20,4 +21,5 @@ angular.module('flapperNews')
     $scope.removePost = function(id) {
       posts.delete(id);
     };
+    $scope.userSession = UserSession;
 }])

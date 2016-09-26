@@ -5,10 +5,10 @@
     </div>
     <div class="collapse navbar-collapse pull-right" ng-controller="NavCtrl">
       <ul class="nav navbar-nav">
-        <li ng-hide="signedIn()"><a href="#/login">Log In</a></li>
-        <li ng-hide="signedIn()"><a href="#/register">Register</a></li>
-        <li ng-show="signedIn()"><a href="#/">Signed in as <strong>{{ user.username }}</strong></a></li>
-        <li ng-show="signedIn()"><a ng-click="logout()" href="#/">Log Out</a></li>
+        <li ng-if="!userSession.signedIn()"><a href="#/login">Log In</a></li>
+        <li ng-if="!userSession.signedIn()"><a href="#/register">Register</a></li>
+        <li ng-if="userSession.signedIn()"><a href="#/">Signed in as <strong>{{ userSession.user.username }}</strong></a></li>
+        <li ng-if="userSession.signedIn()"><a ng-click="userSession.logout()" href="#/">Log Out</a></li>
       </ul>
     </div>
   </div>

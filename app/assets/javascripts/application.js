@@ -4,3 +4,4 @@
 //= require_tree .
 //= require angular-devise
 //= require angular-video-bg 
+//= require angular-bootstrap
