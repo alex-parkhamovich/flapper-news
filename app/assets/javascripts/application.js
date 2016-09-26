@@ -5,3 +5,4 @@
 //= require angular-devise
 //= require angular-video-bg 
 //= require angular-bootstrap
+//= require angularUtils-pagination
