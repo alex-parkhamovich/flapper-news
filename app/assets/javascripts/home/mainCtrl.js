@@ -19,5 +19,5 @@ angular.module('flapperNews')
     $scope.posts = posts.posts;
     $scope.removePost = function(id) {
       posts.delete(id);
-    }
+    };
 }])
