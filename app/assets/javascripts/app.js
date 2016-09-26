@@ -26,7 +26,7 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
           }]
         }
       })
-      .state('app.posts', {
+      .state('posts', {
         url: '/posts/{id}',
         templateUrl: 'posts/_posts.html',
         controller: 'PostsCtrl',

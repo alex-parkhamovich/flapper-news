@@ -54,6 +54,7 @@ GEM
     bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.5)
+    cancan (1.6.10)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (4.1.1)
@@ -171,6 +172,7 @@ DEPENDENCIES
   angular-rails-templates
   angular_rails_csrf!
   byebug
+  cancan
   devise
   jbuilder (~> 2.5)
   listen (~> 3.0.5)

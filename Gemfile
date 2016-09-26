@@ -22,6 +22,7 @@ gem 'angular-rails-templates'
 gem 'responders'
 gem 'angular_rails_csrf', github: 'alex-parkhamovich/angular_rails_csrf'
 gem 'devise'
+gem 'cancan'
 
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
