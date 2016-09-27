@@ -5,7 +5,7 @@
 
     <span style="font-size:20px; margin-left:10px;">
       <a href="#/posts/{{post.id}}">{{post.title}}</a>
-      <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removePost(post.id)" class="close" ng-if='userSession.signedIn()'>        
+      <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removePost(post.id)" class="close" ng-if="userSession.signedIn()">        
       </span>
       <span style="font-size:15px">
         <br>
@@ -14,9 +14,11 @@
     </span>
   </div>
 
-  <dir-pagination-controls></dir-pagination-controls>
-
-  <form ng-submit="addPost()" style="margin-top:30px;">
+  <div class="col-lg-1 col-offset-6 centered">
+    <dir-pagination-controls></dir-pagination-controls>
+  </div>
+  
+  <form ng-submit="addPost()" style="margin-top:30px;" >
     <h3>Add a new post</h3>
     <div class="form-group">
       <input type="text"
