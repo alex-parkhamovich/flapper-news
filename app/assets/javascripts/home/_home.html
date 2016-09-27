@@ -5,7 +5,7 @@
 
     <span style="font-size:20px; margin-left:10px;">
       <a href="#/posts/{{post.id}}">{{post.title}}</a>
-      <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removePost(post.id)" class="close" ng-if="userSession.signedIn()">        
+      <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removePost(post.id)" class="close" ng-if="userSession.user.id == post.user_id">        
       </span>
       <span style="font-size:15px">
         <br>
@@ -18,21 +18,30 @@
     <dir-pagination-controls></dir-pagination-controls>
   </div>
   
-  <form ng-submit="addPost()" style="margin-top:30px;" >
+  <form name="addPostForm" ng-submit="addPost()" style="margin-top:30px;" >
+    <div ng-messages="addPostForm.title.$error" role="alert">
+      <div ng-message="required" class="alert alert-danger">You did not enter a field</div>
+      <div ng-message="minlength">Your field is too short</div>
+      <div ng-message="maxlength">Your field is too long</div>
+    </div>
     <h3>Add a new post</h3>
     <div class="form-group">
-      <input type="text"
+      <input name="title"
+      type="text"
       class="form-control"
       placeholder="Title"
-      ng-model="title"></input>
+      ng-model="title"
+      ng-minlength="5"></input>
     </div>
     <div class="form-group">
-      <input type="text-field"
+      <input type="text"
       class="form-control"
       placeholder="Body"
       ng-model="body"></input>
     </div>
     <button type="submit" class="btn btn-primary">Post</button>
+
   </form>
+  <div ng-if="errorMessage">{{ errorMessage }}</div>
 </div> 
 

@@ -1,4 +1,4 @@
-angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideoBg', 'ui.bootstrap', 'angularUtils.directives.dirPagination'])
+angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideoBg', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngMessages'])
 
 .config([
   '$stateProvider',

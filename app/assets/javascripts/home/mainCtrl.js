@@ -22,4 +22,10 @@ angular.module('flapperNews')
       posts.delete(id);
     };
     $scope.userSession = UserSession;
+
+    $scope.error = function(post){
+      if($scop.title.length < 5 || $scope.body.length < 10){
+        re
+      }
+    }
 }])

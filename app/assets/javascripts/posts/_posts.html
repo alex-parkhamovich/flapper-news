@@ -16,6 +16,8 @@
     <span style="font-size: 20px; margin-left:10px;">
       {{comment.body}}
     </span>
+    <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removeComment(comment)" class="close">        
+    </span>
   </div>
 
   <form ng-submit="addComment()"

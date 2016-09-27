@@ -1,9 +1,17 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate_user!, only: [:create, :upvote]
+  before_filter :authenticate_user!, only: [:create, :upvote, :destroy]
 
   def create 
     post = Post.find(params[:post_id])
     comment = post.comments.create(comment_params.merge(user_id: current_user.id))
+    respond_with post, comment
+  end
+
+  def destroy
+    post = Post.find(params[:post_id])
+    comment = post.comments.find(params[:id])
+    comment.destroy
+
     respond_with post, comment
   end
 

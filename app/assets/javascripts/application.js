@@ -6,3 +6,4 @@
 //= require angular-video-bg 
 //= require angular-bootstrap
 //= require angularUtils-pagination
+//= require angular-messages
