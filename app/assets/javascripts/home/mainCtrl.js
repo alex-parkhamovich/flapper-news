@@ -10,9 +10,11 @@ angular.module('flapperNews')
       posts.create({
         title: $scope.title,
         body: $scope.body,
+        upvotes: $scope.upvotes
       });
       $scope.title = '';
       $scope.body = '';
+      $scope.upvotes = 0;
     };
     $scope.incrementUpvotes = function(post) {
       posts.upvote(post);
