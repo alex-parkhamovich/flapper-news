@@ -16,7 +16,7 @@
     <span style="font-size: 20px; margin-left:10px;">
       {{comment.body}}
     </span>
-    <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removeComment(comment)" class="close">        
+    <span style="font-size:18px" class="glyphicon glyphicon-trash" ng-click="removeComment(comment)" class="close" ng-if="userSession.user.id == comment.user_id">        
     </span>
   </div>
 
