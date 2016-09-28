@@ -20,8 +20,8 @@
     </span>
   </div>
 
-  <form ng-submit="addComment()"
-    style="margin-top:30px;">
+  <form name="addCommentForm" ng-submit="addComment()"
+    ng-show="userSession.signedIn()">
 
     <h3>Add a new comment</h3>
 

@@ -4,7 +4,8 @@ angular.module('flapperNews')
   '$scope',
   'post',
   'posts',
-  function($scope, post, posts){
+  'UserSession',
+  function($scope, post, posts, UserSession){
     $scope.post = post;
     $scope.addComment = function(){
       if($scope.body === '') { return; }
@@ -23,4 +24,5 @@ angular.module('flapperNews')
     $scope.removeComment = function(comment) {
       posts.deleteComment(post, comment);
     };
+    $scope.userSession = UserSession;
 }]);
