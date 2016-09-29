@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'tag/create'
+
   devise_for :users
+
   root to: 'application#angular'
 
   resources :posts, only: [:create, :index, :show, :destroy] do
@@ -14,5 +17,7 @@ Rails.application.routes.draw do
       put '/upvote' => 'posts#upvote'
     end
   end
+
+  resources :tags
   
 end

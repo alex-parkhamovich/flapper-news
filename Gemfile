@@ -22,8 +22,9 @@ gem 'angular-rails-templates'
 gem 'responders'
 gem 'angular_rails_csrf', github: 'alex-parkhamovich/angular_rails_csrf'
 gem 'devise'
-gem 'cancan'
-
+gem 'cancancan'
+gem 'enumerize'
+gem 'pry'
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end
