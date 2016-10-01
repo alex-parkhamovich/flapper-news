@@ -9,6 +9,7 @@
         <li ng-if="!userSession.signedIn()"><a href="#/register">Register</a></li>
         <li ng-if="userSession.signedIn()"><a href="#/">Signed in as <strong>{{ userSession.user.username }}</strong></a></li>
         <li ng-if="userSession.signedIn()"><a ng-click="userSession.logout()" href="#/">Log Out</a></li>
+        <li ng-if="userSession.signedIn() && userSession.user.role == 'admin'"><a href="/admin">Admin</a></li>
       </ul>
     </div>
   </div>
