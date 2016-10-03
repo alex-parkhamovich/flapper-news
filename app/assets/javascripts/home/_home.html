@@ -29,11 +29,14 @@
       required></input>
     </div>
     <div class="form-group">
-      <input type="text"
+      <textarea type="text"
       class="form-control"
       placeholder="Body"
       ng-model="body"
-      required></input>
+      required></textarea>
+    </div>
+    <div class="form-group">
+      <select ng-options="tag as tag.title for tag in tags track by tag.id" ng-model="post.selectedTags"></select>
     </div>
     <button type="submit" class="btn btn-primary">Post</button>
   </form>

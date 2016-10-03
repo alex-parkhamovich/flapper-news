@@ -23,6 +23,9 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
         resolve: {
           postPromise: ['posts', function(posts){
             return posts.getAll();
+          }],
+          tagsPromise: ['tags', function(tags){
+            return tags.getAll();
           }]
         }
       })

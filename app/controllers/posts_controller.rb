@@ -20,13 +20,13 @@ class PostsController < ApplicationController
   def upvote
     post = Post.find(params[:id])
     post.increment!(:upvotes)
-  
+
     respond_with post
   end
 
   private
   def post_params
-    params.require(:post).permit(:body, :title, :upvotes)
+    params.require(:post).permit(:body, :title, :upvotes, :tags)
   end
 
 end

@@ -3,13 +3,16 @@ angular.module('flapperNews')
 .controller('MainCtrl', [
   '$scope',
   'posts',
+  'tags',
   'UserSession',
-  function($scope, posts, UserSession){
+  function($scope, posts, tags, UserSession){
     $scope.addPost = function(){
       if(!$scope.title || $scope.title === '') { return; }
+
       posts.create({
         title: $scope.title,
         body: $scope.body,
+        selectedTags: $scope.selectedTags,
         upvotes: 0
       });
       $scope.title = '';
@@ -20,6 +23,7 @@ angular.module('flapperNews')
       posts.upvote(post);
     };
     $scope.posts = posts.posts;
+    $scope.tags = tags.tags;
     $scope.removePost = function(id) {
       posts.delete(id);
     };
