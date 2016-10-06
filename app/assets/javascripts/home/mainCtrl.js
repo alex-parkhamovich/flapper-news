@@ -8,15 +8,17 @@ angular.module('flapperNews')
   function($scope, posts, tags, UserSession){
     $scope.addPost = function(){
       if(!$scope.title || $scope.title === '') { return; }
-
       posts.create({
         title: $scope.title,
         body: $scope.body,
-        selectedTags: $scope.selectedTags,
+        post: {
+          tags_attributes: $scope.selectedTags
+        },
         upvotes: 0
       });
       $scope.title = '';
       $scope.body = '';
+      $scope.selectedTags = '';
 
     };
     $scope.incrementUpvotes = function(post) {

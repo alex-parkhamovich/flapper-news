@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    # binding.pry
     respond_with Post.create(post_params.merge(user_id: current_user.id))
   end
 
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:body, :title, :upvotes, :tags)
+    params.require(:post).permit(:body, :title, :upvotes, :tags_attributes => [:id, :title])
   end
 
 end
