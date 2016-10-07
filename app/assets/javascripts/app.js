@@ -16,6 +16,7 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
           }
         }
       })
+
       .state('home', {
         url: '/home',
         templateUrl: 'home/_home.html',
@@ -29,6 +30,7 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
           }]
         }
       })
+
       .state('posts', {
         url: '/posts/{id}',
         templateUrl: 'posts/_posts.html',
@@ -39,6 +41,7 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
           }]
         }
       })
+
       .state('login', {
         url: '/login',
         templateUrl: 'auth/_login.html',
@@ -49,6 +52,7 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
           }
         }]
       })
+
       .state('register', {
         url: '/register',
         templateUrl: 'auth/_register.html',
@@ -58,6 +62,7 @@ angular.module('flapperNews', ['ui.router', 'templates', 'Devise', 'angularVideo
             $state.go('home');
           })
         }]
-      });
+      })
+
     $urlRouterProvider.otherwise('home');
 }])
