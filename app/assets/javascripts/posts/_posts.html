@@ -9,7 +9,10 @@
   <div class="jumbotron">
     <p>{{post.body}}</p>
   </div>
-
+  <div>
+    tags: <a ng-href="#">{{post.tag.title}}</a>
+  </div>
+  <br>
   <div ng-repeat="comment in post.comments | orderBy: '-upvotes'">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
     {{comment.upvotes}} - by {{comment.user.username}}

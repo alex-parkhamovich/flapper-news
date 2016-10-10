@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:body, :title, :upvotes,
+    params.require(:post).permit(:body, :title, :upvotes, 
       taggings_attributes: [:id, :tag_id, tag_attributes: [:id, :title]])
   end
 

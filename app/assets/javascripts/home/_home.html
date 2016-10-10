@@ -1,13 +1,4 @@
 <div>
-  <div class="jumbotron">
-    <div class="row"> 
-      <div ng-repeat="tag in tags">
-        <div class="col-xs-1">
-          <h4><a href="#">{{tag.title}}</a></h4>
-        </div>
-      </div>
-    </div>
-  </div>
   <div dir-paginate="post in posts | orderBy: '-upvotes' | itemsPerPage: 10">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
     {{post.upvotes}}
@@ -45,14 +36,20 @@
       ng-model="body"
       required></textarea>
     </div>
-    
-    <div class="form-group select optional post_taggings_tag">
-      <select class="select optional form-control" 
-      id="post_taggings_attributes_tag_id" 
-      name="post[taggings_attributes][tag_id]" 
-      ng-options="tag as tag.title for tag in tags track by tag.id"
-      ng-model="selectedTags"></select>
+    <div class="nested-fields post-tag-fields">
+      <div class ="form-inline">
+        <div class="tag_from_list" style="display: inline">
+          <div class="form-group select optional post_taggings_tag">
+            <select class="select optional form-control" 
+            id="post_taggings_attributes_tag_id" 
+            name="post[taggings_attributes][tag_id]" 
+            ng-options="tag as tag.title for tag in tags track by tag.id"
+            ng-model="selectedTags"></select>
+          </div>
+        </div>
+      </div>
     </div>
+    <br>
     <button type="submit" class="btn btn-primary">Post</button>
   </form>
 

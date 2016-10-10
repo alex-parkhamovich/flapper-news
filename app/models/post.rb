@@ -8,7 +8,6 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :tags
   accepts_nested_attributes_for :taggings
 
-
   validates_presence_of :tags
 
   def as_json(options = {})
